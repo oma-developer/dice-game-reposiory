@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="./images/dice1.png">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="./images/dice2.png">
+      </div>
+
+    </div>
+    <script>
+      let randomnumber1 = Math.floor(Math.random()*6) + 1
+      let randomdiceimg = "dice" + randomnumber1 + ".png"
+      let randomdiceimgsource = "images/" + randomdiceimg
+      let image1 = document.querySelectorAll("img") [0];
+      image1.setAttribute("src", randomdiceimgsource)
+
+      let randomnumber2 = Math.floor(Math.random()*6) + 1
+      let randomdiceimgs = "dice" + randomnumber2 + ".png"
+      let randomdiceimgsources = "images/" + randomdiceimgs
+      let image2 = document.querySelectorAll("img") [1];
+      image2.setAttribute("src", randomdiceimgsources)
+
+
+      if (randomnumber1 > randomnumber2 ){
+        document.querySelector("h1").style.color = "red"
+        document.querySelector("h1").innerHTML = "🚩 player 1 wins"
+      }
+      else if (randomnumber2 > randomnumber1){
+        document.querySelector("h1").style.color = "blue"
+        document.querySelector("h1").innerHTML = "🚩 player 2 wins"
+        }
+      else { document.querySelector("h1").innerHTML = "🙌 Draw !!"}
+
+    </script>
+
+
+  </body>
+
+  <footer>
+    Kwaratech Academy
+  </footer>
+</html>
